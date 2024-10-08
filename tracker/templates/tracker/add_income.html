@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Income</title>
+    <link rel="stylesheet" href="{% static 'tracker/styles.css' %}">
+</head>
+<body>
+    <form method="POST" action="{% url 'add_income' %}">
+        {% csrf_token %}
+        <h1>Add Income</h1>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+        
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source" required>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <button type="submit">Add Income</button>
+    </form>
+</body>
+</html>

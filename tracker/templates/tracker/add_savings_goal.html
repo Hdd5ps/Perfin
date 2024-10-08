@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Savings Goal</title>
+    <link rel="stylesheet" href="{% static 'tracker/styles.css' %}">
+</head>
+<body>
+    <form method="POST" action="{% url 'add_savings_goal' %}">
+        {% csrf_token %}
+        <h1>Add Savings Goal</h1>
+        <label for="goal_name">Goal Name:</label>
+        <input type="text" id="goal_name" name="goal_name" required>
+        
+        <label for="target_amount">Target Amount:</label>
+        <input type="text" id="target_amount" name="target_amount" required>
+        
+        <label for="current_amount">Current Amount:</label>
+        <input type="text" id="current_amount" name="current_amount" required>
+        
+        <label for="due_date">Due Date:</label>
+        <input type="date" id="due_date" name="due_date" required>
+        
+        <button type="submit">Add Savings Goal</button>
+    </form>
+</body>
+</html>

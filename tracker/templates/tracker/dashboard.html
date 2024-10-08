@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'tracker/styles.css' %}">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Incomes</h2>
+    <ul>
+        {% for income in incomes %}
+            <li>{{ income.date }}: ${{ income.amount }} from {{ income.source }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Expenses</h2>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense.date }}: ${{ expense.amount }} for {{ expense.category }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Savings Goals</h2>
+    <ul>
+        {% for goal in savings_goals %}
+            <li>{{ goal.goal_name }}: ${{ goal.current_amount }} / ${{ goal.target_amount }} by {{ goal.due_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
